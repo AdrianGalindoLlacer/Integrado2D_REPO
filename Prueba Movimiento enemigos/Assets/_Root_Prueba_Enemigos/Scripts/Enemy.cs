@@ -1,50 +1,53 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Stats")]
+    public float speed = 2f;
+    public float enemyMaxHealth = 3f;
+    public int enemyDamage = 1;
 
-    [Header("Enemies Principal Stats")]
-    public float speed;
-    [SerializeField] float enemyHealth, enemyMaxHealth = 3f;
-    public int enemyDamage;
+    float enemyHealth;
+    Transform player;
 
-
-    [Header("Tracking Parameters")]
-    private float distance;
-
-    [Header("Player Parameters")]
-    public GameObject player;
-
-    
     void Start()
     {
         enemyHealth = enemyMaxHealth;
-    }
 
+        // Busca automáticamente al Player por tag
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogError("No se encontró ningún objeto con el tag 'Player'");
+        }
+    }
 
     void Update()
     {
+        if (player == null) return;
+
         EnemyMovement();
     }
 
-    private void OnCollisonEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))  
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHurt();
         }
     }
 
-    private void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount)
     {
-       
-        {
-            enemyHealth -= damageAmount;
-        }
+        enemyHealth -= damageAmount;
+        EnemyDeath();
     }
 
-    private void EnemyDeath()
+    void EnemyDeath()
     {
         if (enemyHealth <= 0)
         {
@@ -52,19 +55,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void PlayerHurt()
+    void PlayerHurt()
     {
-        GameManager.Instance.playerHealth =- enemyDamage;
+        // Asegúrate de que GameManager existe
+        GameManager.Instance.playerHealth -= enemyDamage;
     }
 
-    private void EnemyMovement()
+    void EnemyMovement()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Vector2 direction = (player.position - transform.position).normalized;
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        // Rotación opcional (quítala si no quieres que rote)
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+
+        transform.position = Vector2.MoveTowards(
+            transform.position,
+            player.position,
+            speed * Time.deltaTime
+        );
     }
 }
