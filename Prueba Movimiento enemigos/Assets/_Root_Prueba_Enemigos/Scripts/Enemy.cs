@@ -10,9 +10,17 @@ public class Enemy : MonoBehaviour
     float enemyHealth;
     Transform player;
 
+    [SerializeField] HealthBar healthBar;
+
+    private void Awake()
+    {
+        healthBar = GetComponentInChildren<HealthBar>();
+    }
+
     void Start()
     {
         enemyHealth = enemyMaxHealth;
+        healthBar.UpdateHealthBar(enemyHealth, enemyMaxHealth);
 
         // Busca automáticamente al Player por tag
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -44,15 +52,18 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         enemyHealth -= damageAmount;
-        EnemyDeath();
+        healthBar.UpdateHealthBar(enemyHealth, enemyMaxHealth);
+        if (enemyHealth <= 0)
+        {
+            EnemyDeath();
+        }
     }
 
     void EnemyDeath()
     {
-        if (enemyHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+
+        Destroy(gameObject);
+
     }
 
     void PlayerHurt()
