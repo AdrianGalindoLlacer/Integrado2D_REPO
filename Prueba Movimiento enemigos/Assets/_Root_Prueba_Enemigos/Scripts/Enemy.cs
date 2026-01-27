@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -5,9 +6,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Enemies Principal Stats")]
     public float speed;
-    private float health;
-    public float maxHealth;
-    public float attackDamage;
+    [SerializeField] float enemyHealth, enemyMaxHealth = 3f;
+    public int enemyDamage;
+
 
     [Header("Tracking Parameters")]
     private float distance;
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
-        health = maxHealth;
+        enemyHealth = enemyMaxHealth;
     }
 
 
@@ -27,20 +28,33 @@ public class Enemy : MonoBehaviour
         EnemyMovement();
     }
 
-    private void TakeDamage()
+    private void OnCollisonEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))  
+        {
+            PlayerHurt();
+        }
+    }
+
+    private void TakeDamage(float damageAmount)
     {
        
         {
-            
+            enemyHealth -= damageAmount;
         }
     }
 
     private void EnemyDeath()
     {
-        if (health <= 0)
+        if (enemyHealth <= 0)
         {
-            
+            Destroy(gameObject);
         }
+    }
+
+    public void PlayerHurt()
+    {
+        GameManager.Instance.playerHealth =- enemyDamage;
     }
 
     private void EnemyMovement()

@@ -791,8 +791,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Prueba Movimiento enemigos
-  metroPackageVersion: 
+  metroPackageName: PruebaMovimientoenemigos
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -800,7 +800,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Prueba Movimiento enemigos
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Prueba Movimiento enemigos
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -867,7 +867,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 6de4172b-8681-475a-a77f-7a1f27e7eba2
   framebufferDepthMemorylessMode: 0

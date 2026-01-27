@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344291459}
-  - component: {fileID: 344291458}
+  - component: {fileID: 344291460}
   m_Layer: 0
   m_Name: MapGenerator
   m_TagString: Untagged
@@ -136,28 +136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &344291458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344291457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4104f1fa05ca6945af41b21182d4125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WalkerGenerator
-  walkers: []
-  tileMap: {fileID: 913210417}
-  floor: {fileID: 11400000, guid: 9183982432d448c47a7170086a4dcfca, type: 2}
-  wall: {fileID: 11400000, guid: 361a8e85be556234d938cd1fb961e4c1, type: 2}
-  mapWidth: 40
-  mapHeight: 40
-  maximumWalkers: 10
-  tileCount: 0
-  fillPercentage: 0.4
-  waitTime: 0.05
 --- !u!4 &344291459
 Transform:
   m_ObjectHideFlags: 0
@@ -173,6 +151,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344291460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344291457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4104f1fa05ca6945af41b21182d4125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WalkerGenerator
+  walkers: []
+  tileMap: {fileID: 913210417}
+  floor: {fileID: 11400000, guid: 9183982432d448c47a7170086a4dcfca, type: 2}
+  wall: {fileID: 11400000, guid: 361a8e85be556234d938cd1fb961e4c1, type: 2}
+  mapWidth: 30
+  mapHeight: 30
+  maximumWalkers: 10
+  tileCount: 0
+  fillPercentage: 0.4
+  waitTime: 0
 --- !u!1 &913210414
 GameObject:
   m_ObjectHideFlags: 0
