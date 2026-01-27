@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         enemyHealth = enemyMaxHealth;
         healthBar.UpdateHealthBar(enemyHealth, enemyMaxHealth);
 
-        // Busca automáticamente al Player por tag
+        
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No se encontró ningún objeto con el tag 'Player'");
+            Debug.LogError("No se encontrï¿½ ningï¿½n objeto con el tag 'Player'");
         }
     }
 
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     void PlayerHurt()
     {
-        // Asegúrate de que GameManager existe
+        // Asegï¿½rate de que GameManager existe
         GameManager.Instance.playerHealth -= enemyDamage;
     }
 
@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
     {
         Vector2 direction = (player.position - transform.position).normalized;
 
-        // Rotación opcional (quítala si no quieres que rote)
+        // Rotaciï¿½n opcional (quï¿½tala si no quieres que rote)
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
 
