@@ -9,11 +9,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     bool invencibility = false;
     [SerializeField] float invecibilityDuration;
     [SerializeField] Slider barraVida;
+    SpriteRenderer spriteRenderer;
+    float blinkDuration = 0.2f;
     
 
     void Awake()
     {
         currentHealth = maxHealth;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     public void TakeDamage(float playerDamage)
@@ -49,6 +53,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
         invencibility = true;
         StartCoroutine(InvencibilityCoroutine(duration));
+        StartCoroutine(BlinkingCoroutine(blinkDuration));
         Debug.Log("me han pegado, ahora no me la devuelves");
     }
     IEnumerator InvencibilityCoroutine(float duration)
@@ -60,6 +65,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     void SceneReload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    IEnumerator BlinkingCoroutine(float duration)
+    {
+        while (invencibility)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(duration);
+        }   
+        spriteRenderer.enabled = true;
     }
 }
 
