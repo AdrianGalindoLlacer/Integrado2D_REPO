@@ -108,7 +108,9 @@ MonoBehaviour:
   speed: 3
   enemyMaxHealth: 3
   enemyDamage: 1
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 8532264626386961826}
+  baseHealth: 3
+  baseDamage: 1
 --- !u!61 &1816398386024309812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -269,3 +271,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4123978927004874860, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
   m_PrefabInstance: {fileID: 7721136327604222384}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8532264626386961826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2111710952035171346, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+  m_PrefabInstance: {fileID: 7721136327604222384}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3163b88a2fd2be4780b3e5c604bc6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar

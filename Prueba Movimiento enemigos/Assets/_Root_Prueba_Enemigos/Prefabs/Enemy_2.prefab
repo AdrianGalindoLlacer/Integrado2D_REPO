@@ -499,9 +499,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   speed: 4
-  enemyMaxHealth: 10
+  enemyMaxHealth: 1000
   enemyDamage: 1
   healthBar: {fileID: 6627233336297219704}
+  baseHealth: 3
+  baseDamage: 1
 --- !u!61 &816243750705365500
 BoxCollider2D:
   m_ObjectHideFlags: 0
