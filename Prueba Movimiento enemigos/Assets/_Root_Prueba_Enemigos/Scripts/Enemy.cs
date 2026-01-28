@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Enemy Stats")]
     public float speed = 2f;
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No se encontr� ning�n objeto con el tag 'Player'");
+            Debug.LogWarning("No se encontr� ning�n objeto con el tag 'Player'");
         }
     }
 
@@ -43,9 +43,9 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.TryGetComponent(out IDamageable player))
         {
-            PlayerHurt();
+            player.TakeDamage(enemyDamage);
         }
     }
 
@@ -64,12 +64,6 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
 
-    }
-
-    void PlayerHurt()
-    {
-        // Aseg�rate de que GameManager existe
-        GameManager.Instance.playerHealth -= enemyDamage;
     }
 
     void EnemyMovement()

@@ -38,14 +38,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = -Camera.main.transform.position.z; // Distancia al plano Z=0
         mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
-        Debug.Log(mousePosition);
+        
         
         
         Vector2 aimDir = mousePosition - rb.position;
         float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-        Debug.Log(aimDir);
-        Debug.Log(angle);
+
 
 
         if (Input.GetMouseButton(0) && weapon != null)
