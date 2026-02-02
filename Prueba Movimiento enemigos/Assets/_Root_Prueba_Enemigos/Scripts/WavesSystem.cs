@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
     public GameObject[] enemyPrefabs;  // Lista de Prefabs de enemigos
     public Transform[] spawnPoints;  // Lista de puntos de spawn
     public Transform player;  // Referencia al jugador
+    bool upgradeClicked = true;
 
     [Header("Enemy Spawn Settings")]
     public float[] enemyProbabilities; // Probabilidades para cada enemigo (porcentaje)
@@ -44,6 +45,10 @@ public class WaveManager : MonoBehaviour
 
         // Esperar hasta que todos los enemigos de la oleada sean eliminados
         yield return new WaitUntil(() => remainingEnemies == 0);
+
+        upgradeClicked = false;
+
+        yield return new WaitUntil(() => upgradeClicked = true);
 
         // Esperar entre oleadas antes de comenzar la siguiente
         yield return new WaitForSeconds(waveInterval);
