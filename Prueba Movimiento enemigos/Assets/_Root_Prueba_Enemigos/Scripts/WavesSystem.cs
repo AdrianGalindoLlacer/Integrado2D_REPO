@@ -28,18 +28,18 @@ public class WaveManager : MonoBehaviour
         waveNumber++;
         remainingEnemies = enemiesPerWave;
 
-        // Aumentar el número de enemigos cada oleada (por ejemplo, un 20% más por oleada)
-        enemiesPerWave = Mathf.FloorToInt(enemiesPerWave * 1.2f);  // Aumenta un 20% por oleada
+        
+        enemiesPerWave = Mathf.FloorToInt(enemiesPerWave * 1.2f);
 
-        // Aumentar la dificultad de los enemigos según el número de la oleada
+        
         float healthMultiplier = Mathf.Pow(difficultyIncrease, waveNumber);
         float damageMultiplier = Mathf.Pow(difficultyIncrease, waveNumber);
 
-        // Crear enemigos
+        
         for (int i = 0; i < enemiesPerWave; i++)
         {
             SpawnEnemy(healthMultiplier, damageMultiplier);
-            yield return new WaitForSeconds(0.5f);  // Un pequeño retraso entre la aparición de enemigos
+            yield return new WaitForSeconds(0.5f);
         }
 
         // Esperar hasta que todos los enemigos de la oleada sean eliminados
