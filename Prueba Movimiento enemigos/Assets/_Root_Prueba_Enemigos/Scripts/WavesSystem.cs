@@ -11,6 +11,7 @@ public class WaveManager : MonoBehaviour
     public Transform[] spawnPoints;  // Lista de puntos de spawn
     public Transform player;  // Referencia al jugador
     bool upgradeClicked = true;
+    public GameObject upgradesPanel;
 
     [Header("Enemy Spawn Settings")]
     public float[] enemyProbabilities; // Probabilidades para cada enemigo (porcentaje)
@@ -20,6 +21,7 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        upgradeClicked = false;
         // Empieza la primera oleada
         StartCoroutine(SpawnWave());
     }
@@ -44,11 +46,22 @@ public class WaveManager : MonoBehaviour
         }
 
         // Esperar hasta que todos los enemigos de la oleada sean eliminados
-        yield return new WaitUntil(() => remainingEnemies == 0);
+        yield return new WaitUntil(() => remainingEnemies == -1);
 
         upgradeClicked = false;
 
-        yield return new WaitUntil(() => upgradeClicked = true);
+        //pausa jugador
+
+        upgradesPanel.SetActive(true);
+        Debug.Log("Espera");
+
+        yield return new WaitUntil(() => upgradeClicked == true);
+        Debug.Log("Fin Espera");
+
+        upgradesPanel.SetActive(false);
+
+
+        //Despausa jugador
 
         // Esperar entre oleadas antes de comenzar la siguiente
         yield return new WaitForSeconds(waveInterval);
