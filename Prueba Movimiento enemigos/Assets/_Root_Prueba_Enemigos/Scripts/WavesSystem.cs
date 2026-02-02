@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
     public GameObject[] enemyPrefabs;  // Lista de Prefabs de enemigos
     public Transform[] spawnPoints;  // Lista de puntos de spawn
     public Transform player;  // Referencia al jugador
-    bool upgradeClicked = true;
+    public bool upgradeClicked = true;
     public GameObject upgradesPanel;
 
     [Header("Enemy Spawn Settings")]
@@ -18,6 +18,9 @@ public class WaveManager : MonoBehaviour
 
     private int waveNumber = 0;
     private int remainingEnemies;
+
+    [Header("Level Up References")]
+    public LevelUpSystem levelUpSystem;
 
     void Start()
     {
@@ -50,9 +53,10 @@ public class WaveManager : MonoBehaviour
 
         upgradeClicked = false;
 
-        //pausa jugador
+        //levelUpSustem.PausePlayer();
 
         upgradesPanel.SetActive(true);
+        levelUpSystem.ShowUpgrades();
         Debug.Log("Espera");
 
         yield return new WaitUntil(() => upgradeClicked == true);
@@ -61,7 +65,9 @@ public class WaveManager : MonoBehaviour
         upgradesPanel.SetActive(false);
 
 
-        //Despausa jugador
+        //levelUpSustem.UnpausePlayer();
+
+
 
         // Esperar entre oleadas antes de comenzar la siguiente
         yield return new WaitForSeconds(waveInterval);

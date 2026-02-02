@@ -4,8 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField]float maxHealth = 10f;
-    float currentHealth = 0f;
+    public float maxHealth = 10f;
+    public float currentHealth = 0f;
     bool invencibility = false;
     [SerializeField] float invecibilityDuration;
     [SerializeField] Slider barraVida;
