@@ -53,7 +53,7 @@ public class WaveManager : MonoBehaviour
 
         upgradeClicked = false;
 
-        //levelUpSustem.PausePlayer();
+        levelUpSystem.PausePlayer();
 
         upgradesPanel.SetActive(true);
         levelUpSystem.ShowUpgrades();
@@ -65,7 +65,7 @@ public class WaveManager : MonoBehaviour
         upgradesPanel.SetActive(false);
 
 
-        //levelUpSustem.UnpausePlayer();
+        levelUpSystem.UnpausePlayer();
 
 
 

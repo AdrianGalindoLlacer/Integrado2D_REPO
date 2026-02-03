@@ -145,6 +145,14 @@ public class LevelUpSystem : MonoBehaviour
         waveManager.upgradeClicked = true;
     }
 
-    public void PausePlayer() { }
-    public void UnpausePlayer() { }
+    public void PausePlayer()
+    {
+        playerMovement.enabled = false;
+        weapon.enabled = false;
+    }
+    public void UnpausePlayer()
+    {
+        playerMovement.enabled = true;
+        weapon.enabled = true;
+    }
 }
