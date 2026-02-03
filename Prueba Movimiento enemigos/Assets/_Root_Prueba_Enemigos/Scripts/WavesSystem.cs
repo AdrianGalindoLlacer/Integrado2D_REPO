@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
     [Header("Enemy Spawn Settings")]
     public float[] enemyProbabilities; // Probabilidades para cada enemigo (porcentaje)
 
-    private int waveNumber = 0;
+    public int waveNumber = 0;
     private int remainingEnemies;
 
     [Header("Level Up References")]
