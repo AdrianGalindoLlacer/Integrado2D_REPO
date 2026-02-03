@@ -283,9 +283,13 @@ PrefabInstance:
     - target: {fileID: 3066348590341620014, guid: 50cb3323497e25e4095210bb1238043a, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 175902352}
+      objectReference: {fileID: 175902355}
     - target: {fileID: 3066348590341620014, guid: 50cb3323497e25e4095210bb1238043a, type: 3}
       propertyPath: enemyDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3066348590341620014, guid: 50cb3323497e25e4095210bb1238043a, type: 3}
+      propertyPath: enemyHealth
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3943210983262920244, guid: 50cb3323497e25e4095210bb1238043a, type: 3}
