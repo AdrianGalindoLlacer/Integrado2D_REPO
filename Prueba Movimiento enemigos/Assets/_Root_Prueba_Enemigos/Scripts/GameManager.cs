@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
 
     //Variables
 
-    public int playerHealth;
-    public int maxPlayerHealth;
 
     private void Awake()
     {
