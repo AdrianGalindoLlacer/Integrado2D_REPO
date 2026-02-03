@@ -9,6 +9,7 @@ public class LevelUpSystem : MonoBehaviour
     public PlayerHealth playerHealth;
     public PlayerMovement playerMovement;
     public Weapon weapon;
+    public HealthBar healthBar;
 
     [Header("Upgrade UI")]
     public UpgradeButton[] upgradeButtons;
@@ -120,6 +121,7 @@ public class LevelUpSystem : MonoBehaviour
             case UpgradeType.AumentarSaludMaxima:
                 playerHealth.maxHealth += upgrade.value;
                 playerHealth.currentHealth += upgrade.value;
+                healthBar.UpdateHealthBar(playerHealth.currentHealth, playerHealth.maxHealth);
                 break;
 
             case UpgradeType.CurarSalud:
@@ -127,6 +129,7 @@ public class LevelUpSystem : MonoBehaviour
                     playerHealth.currentHealth + upgrade.value,
                     playerHealth.maxHealth
                 );
+                healthBar.UpdateHealthBar(playerHealth.currentHealth, playerHealth.maxHealth);
                 break;
 
             case UpgradeType.AumentarVelocidadDisparo:

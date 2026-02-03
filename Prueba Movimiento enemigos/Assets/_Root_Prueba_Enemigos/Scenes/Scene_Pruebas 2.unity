@@ -3364,6 +3364,7 @@ MonoBehaviour:
   playerHealth: {fileID: 2142279825}
   playerMovement: {fileID: 2142279827}
   weapon: {fileID: 2111602305}
+  healthBar: {fileID: 5013629373941007823}
   upgradeButtons:
   - {fileID: 100217444}
   - {fileID: 743678149}
@@ -3668,8 +3669,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5472883073009975294, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3677,6 +3677,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2142279825}
   m_SourcePrefab: {fileID: 100100000, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+--- !u!114 &5013629373941007823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5472883073009975294, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+  m_PrefabInstance: {fileID: 5013629373941007822}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3163b88a2fd2be4780b3e5c604bc6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
