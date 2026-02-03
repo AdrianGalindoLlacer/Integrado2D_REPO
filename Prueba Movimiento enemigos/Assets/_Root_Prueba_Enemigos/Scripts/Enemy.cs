@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public float speed = 2f;
     public float enemyMaxHealth = 3f;  // Este valor representa la salud base del enemigo.
     public float enemyDamage = 1f;     // Este valor representa el daño base del enemigo.
+    public bool isDead;
 
     float enemyHealth;
     Transform player;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         healthBar = GetComponentInChildren<HealthBar>();
         waveManager = FindObjectOfType<WaveManager>();  // Busca el WaveManager en la escena
+        isDead = false;
     }
 
     void Start()
@@ -65,8 +67,9 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         enemyHealth -= damageAmount;
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
-        if (enemyHealth <= 0)
+        if (enemyHealth <= 0 && isDead == false )
         {
+            isDead = true;
             EnemyDeath();
         }
     }

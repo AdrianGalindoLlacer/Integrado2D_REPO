@@ -6,7 +6,7 @@ public class EnemyCounter : MonoBehaviour
     public WaveManager waveManager;
     GameObject[] enemies;
     public TMP_Text enemyCountText;
-    public TMP_Text waveCounter;
+    public TMP_Text waveCounterText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +19,6 @@ public class EnemyCounter : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemyCountText.text = "Enemies Left: " + enemies.Length.ToString();
-        waveCounter.text = "Wave: " + waveManager.waveNumber.ToString();
+        waveCounterText.text = "Wave: " + waveManager.waveNumber.ToString();
     }
 }

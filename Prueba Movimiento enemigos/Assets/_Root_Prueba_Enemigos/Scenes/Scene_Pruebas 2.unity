@@ -1737,9 +1737,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85e0abb3b89c454b9f76582eb706a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCounter
-  waveManager: {fileID: 0}
-  enemyCountText: {fileID: 0}
-  waveCounter: {fileID: 378747109}
+  waveManager: {fileID: 465148355}
+  enemyCountText: {fileID: 689767192}
+  waveCounterText: {fileID: 378747109}
 --- !u!4 &1050381768
 Transform:
   m_ObjectHideFlags: 0
@@ -1921,9 +1921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85e0abb3b89c454b9f76582eb706a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCounter
-  waveManager: {fileID: 0}
+  waveManager: {fileID: 465148355}
   enemyCountText: {fileID: 689767192}
-  waveCounter: {fileID: 0}
+  waveCounterText: {fileID: 378747109}
 --- !u!4 &1167738038
 Transform:
   m_ObjectHideFlags: 0

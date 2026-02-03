@@ -32,10 +32,10 @@ public class WaveManager : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber++;
+        enemiesPerWave = Mathf.FloorToInt(enemiesPerWave * 1.2f);
         remainingEnemies = enemiesPerWave;
 
         
-        enemiesPerWave = Mathf.FloorToInt(enemiesPerWave * 1.2f);
 
         
         float healthMultiplier = Mathf.Pow(difficultyIncrease, waveNumber);
@@ -49,7 +49,7 @@ public class WaveManager : MonoBehaviour
         }
 
         // Esperar hasta que todos los enemigos de la oleada sean eliminados
-        yield return new WaitUntil(() => remainingEnemies == -1);
+        yield return new WaitUntil(() => remainingEnemies == 0);
 
         upgradeClicked = false;
 
