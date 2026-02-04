@@ -266,14 +266,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 55109284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cf6bcbada9a304887aba7369836452, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5d6dac241ba0b418a00d0e3b479971, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  target: {fileID: 2142279821}
-  leadingFactor: {x: 0.4, y: 0.4}
-  lerpSpeed: 8
-  maxDistance: 3
-  maxTargetSpeed: 5
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  objetivo: {fileID: 2142279826}
+  velocidadCamara: 0.025
+  desplazamiento: {x: 0, y: 0, z: -10}
 --- !u!1 &100217439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,11 +3460,6 @@ MonoBehaviour:
 --- !u!1 &2142279818 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2930758829399624443, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
-  m_PrefabInstance: {fileID: 5013629373941007822}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &2142279821 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 2756067033261629279, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
   m_PrefabInstance: {fileID: 5013629373941007822}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2142279825
