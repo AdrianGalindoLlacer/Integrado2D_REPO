@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 15f;
     public float dashDuration = 0.15f;
     public float dashCooldown = 0.8f;
+    Vector2 aimDirection;
+
 
     [Header("Weapon")]
     public Weapon weapon;
@@ -38,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = -Camera.main.transform.position.z; // Distancia al plano Z=0
         mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
-        
-        
-        
-        Vector2 aimDir = mousePosition - rb.position;
-        float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        aimDirection = (mousePosition - rb.position).normalized;
+
+
+
+
+
 
 
 
@@ -58,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
             isDashing = true;
             dashTime = dashDuration;
             dashCooldownTimer = dashCooldown;
-            dashDirection = moveDirection == Vector2.zero ? aimDir.normalized : moveDirection;
+            dashDirection = moveDirection == Vector2.zero ? aimDirection : moveDirection;
+
         }
 
         if (dashCooldownTimer > 0)
