@@ -501,6 +501,7 @@ MonoBehaviour:
   speed: 4
   enemyMaxHealth: 1000
   enemyDamage: 1
+  isDead: 0
   healthBar: {fileID: 6627233336297219704}
   baseHealth: 10
   baseDamage: 1
