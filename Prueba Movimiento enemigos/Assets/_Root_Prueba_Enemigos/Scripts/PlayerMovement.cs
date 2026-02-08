@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 5f;
+    [SerializeField] bool isFacingRight = false;
 
     [Header("Dash")]
     public float dashSpeed = 15f;
@@ -15,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Weapon")]
     public Weapon weapon;
 
-    Rigidbody2D rb;
+    Rigidbody2D playerRb;
     Vector2 moveDirection;
     Vector2 mousePosition;
 
@@ -24,25 +26,27 @@ public class PlayerMovement : MonoBehaviour
     float dashCooldownTimer;
     Vector2 dashDirection;
 
+    Vector2 moveInput;
+    private Animator anim;
+
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        playerRb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         
-        moveDirection = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")
-        ).normalized;
+        
 
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = -Camera.main.transform.position.z; // Distancia al plano Z=0
         mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
-        aimDirection = (mousePosition - rb.position).normalized;
+        aimDirection = (mousePosition - playerRb.position).normalized;
 
-
+        if (moveInput.x > 0 && !isFacingRight) Flip();
+        if (moveInput.x < 0 && isFacingRight) Flip();
 
 
 
@@ -73,18 +77,51 @@ public class PlayerMovement : MonoBehaviour
        
         if (isDashing)
         {
-            rb.linearVelocity = dashDirection * dashSpeed;
+            playerRb.linearVelocity = dashDirection * dashSpeed;
             dashTime -= Time.fixedDeltaTime;
 
             if (dashTime <= 0)
             {
                 isDashing = false;
-                rb.linearVelocity = Vector2.zero;
+                playerRb.linearVelocity = Vector2.zero;
             }
             return;
         }
 
-        
-        rb.linearVelocity = moveDirection * moveSpeed;
+       
+
+        Movement();
     }
+
+    void Movement()
+    {
+        playerRb.linearVelocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+    }
+
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 actualScale = transform.localScale;
+        actualScale.x *= -1;
+        transform.localScale = actualScale;
+    }
+
+    #region Input Methods
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+
+    }
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+
+    }
+
+    #endregion
 }

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8471926827003352078}
   - component: {fileID: 1566212450811736192}
   - component: {fileID: 7114722494845151572}
-  - component: {fileID: 1413289205942622344}
   - component: {fileID: 8877547696809564131}
   - component: {fileID: 3140420361068351628}
   - component: {fileID: 7072223626077868674}
   - component: {fileID: 8067342010970865618}
   - component: {fileID: 3730299137275150517}
+  - component: {fileID: 6282004643233889255}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -197,36 +197,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1413289205942622344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3974293052946701860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 54af94676504e0f4ab53d8a952125f92, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!50 &8877547696809564131
 Rigidbody2D:
   serializedVersion: 5
@@ -313,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
+  isFacingRight: 0
   dashSpeed: 18
   dashDuration: 0.2
   dashCooldown: 1
@@ -333,6 +304,7 @@ MonoBehaviour:
   currentHealth: 0
   invecibilityDuration: 1
   barraVida: {fileID: 314850039227697928}
+  deathPanel: {fileID: 0}
 --- !u!95 &3730299137275150517
 Animator:
   serializedVersion: 7
@@ -355,6 +327,61 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6282004643233889255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974293052946701860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 3ac419d71553e7d4b878369f84e425ed, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7072223626077868674}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 56e2f01a-aa40-4eee-9d07-2f29933347ae
+    m_ActionName: 'Gameplay/Move[/MY-POWER CO.,LTD. USB Joystick/stick,/MY-POWER
+      CO.,LTD. USB Joystick/hat,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 441ef5fa-0cf0-4fb9-b5ad-dfc77017ff4b
+    m_ActionName: 'Gameplay/Shot[/MY-POWER CO.,LTD. USB Joystick/button8,/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2968909c-19ed-4a29-ae83-21ece0d1621f
+    m_ActionName: 'Gameplay/Dash[/MY-POWER CO.,LTD. USB Joystick/button7,/Keyboard/shift]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4379270003060277202
 GameObject:
   m_ObjectHideFlags: 0

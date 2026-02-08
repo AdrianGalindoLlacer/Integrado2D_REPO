@@ -18,5 +18,5 @@ EditorBuildSettings:
     path: Assets/_Root_Prueba_Enemigos/Scenes/SCN_Map_1.unity
     guid: d38fa33dd55c0e941b7cbe4eaaa6b416
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 54af94676504e0f4ab53d8a952125f92, type: 3}
   m_UseUCBPForAssetBundles: 0
