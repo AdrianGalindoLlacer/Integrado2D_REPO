@@ -221,6 +221,10 @@ PrefabInstance:
       value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 8067342010970865618, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067342010970865618, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 29117243}
