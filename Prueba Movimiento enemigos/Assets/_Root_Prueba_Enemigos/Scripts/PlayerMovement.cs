@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 15f;
     public float dashDuration = 0.15f;
     public float dashCooldown = 0.8f;
+    bool canDash = true;
     Vector2 aimDirection;
-
 
     [Header("Weapon")]
     public Weapon weapon;
@@ -35,37 +36,29 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        canDash = true;
+    }
+
     void Update()
     {
-        
-        
+        if (isDashing)
+        {
+            return;
+        }
 
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = -Camera.main.transform.position.z; // Distancia al plano Z=0
+        mousePos.z = -Camera.main.transform.position.z;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
         aimDirection = (mousePosition - playerRb.position).normalized;
 
         if (moveInput.x > 0 && !isFacingRight) Flip();
         if (moveInput.x < 0 && isFacingRight) Flip();
 
-
-
-
-
-
         if (Input.GetMouseButton(0) && weapon != null)
         {
             weapon.Fire();
-        }
-
-      
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTimer <= 0 && !isDashing)
-        {
-            isDashing = true;
-            dashTime = dashDuration;
-            dashCooldownTimer = dashCooldown;
-            dashDirection = moveDirection == Vector2.zero ? aimDirection : moveDirection;
-
         }
 
         if (dashCooldownTimer > 0)
@@ -74,21 +67,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-       
         if (isDashing)
         {
-            playerRb.linearVelocity = dashDirection * dashSpeed;
-            dashTime -= Time.fixedDeltaTime;
-
-            if (dashTime <= 0)
-            {
-                isDashing = false;
-                playerRb.linearVelocity = Vector2.zero;
-            }
             return;
         }
-
-       
 
         Movement();
     }
@@ -106,11 +88,41 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = actualScale;
     }
 
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        // Dash hacia la dirección en la que caminas
+        playerRb.linearVelocity = new Vector2(
+            moveDirection.x * dashSpeed,
+            moveDirection.y * dashSpeed
+        );
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
+
     #region Input Methods
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
+        
+        moveDirection = moveInput.normalized;
+    }
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.performed && canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     #endregion

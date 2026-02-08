@@ -323,6 +323,22 @@ MonoBehaviour:
     m_ActionId: 56e2f01a-aa40-4eee-9d07-2f29933347ae
     m_ActionName: 'Gameplay/Move[/MY-POWER CO.,LTD. USB Joystick/stick,/MY-POWER
       CO.,LTD. USB Joystick/hat,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7072223626077868674}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85dd248d-fe01-4ec0-882b-9178f929cb7b
+    m_ActionName: 'Gameplay/Dash[/MY-POWER CO.,LTD. USB Joystick/button7,/Keyboard/shift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
