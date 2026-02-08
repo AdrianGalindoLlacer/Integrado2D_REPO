@@ -220,6 +220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooting
   enemyBullet: {fileID: 4812734406825896289, guid: 949e3bdd24081864cbe0191531dafed9, type: 3}
   bulletPosition: {fileID: 711091013218438646}
+  bulletCount: 3
+  spreadAngle: 20
+  timeBetweenShotguns: 2
 --- !u!1 &8763893105278777072
 GameObject:
   m_ObjectHideFlags: 0

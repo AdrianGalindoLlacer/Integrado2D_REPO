@@ -169,6 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c24a8afef49e7498e310f7529359de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBulletScript
-  player: {fileID: 3974293052946701860, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
-  bulletSpeed: 10
-  timeToDisapear: 6
+  bulletSpeed: 5
+  direction: {x: 0, y: 0}
