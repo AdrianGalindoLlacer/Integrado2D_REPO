@@ -6,6 +6,7 @@ public class EnemyBulletScript : MonoBehaviour
     public float bulletSpeed = 5f;
     public Vector2 direction;
 
+
     float timeToDisappear;
 
     void Start()
