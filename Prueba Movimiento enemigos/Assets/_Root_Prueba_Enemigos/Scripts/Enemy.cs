@@ -5,35 +5,37 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Enemy Stats")]
     public float speed = 2f;
-    public float enemyMaxHealth = 3f;  // Este valor representa la salud base del enemigo.
-    public float enemyDamage = 1f;     // Este valor representa el daño base del enemigo.
+    public float enemyMaxHealth = 3f;
+    public float enemyDamage = 1f;
     public bool isDead;
+
+    [SerializeField] bool isFacingRight = false;
 
     float enemyHealth;
     Transform player;
-    WaveManager waveManager;  // Referencia al WaveManager
+    WaveManager waveManager;
     private NavMeshAgent agent;
 
     [SerializeField] HealthBar healthBar;
-    [SerializeField] float baseHealth = 3f;  // Este es el valor base de la salud en el prefab
-    [SerializeField] float baseDamage = 1f;  // Este es el valor base del daño en el prefab
+    [SerializeField] float baseHealth = 3f;
+    [SerializeField] float baseDamage = 1f;
 
     float currentHealth;
     float currentDamage;
 
-    // Este método ajusta las estadísticas basadas en los multiplicadores de dificultad.
+    Vector2 enemyOrientation;
+
     public void SetStats(float healthMultiplier, float damageMultiplier)
     {
-        // Respetamos las estadísticas base y aplicamos el multiplicador.
         currentHealth = baseHealth * healthMultiplier;
         currentDamage = baseDamage * damageMultiplier;
-        enemyHealth = currentHealth;  // Establecemos la salud inicial del enemigo
+        enemyHealth = currentHealth;
     }
 
     private void Awake()
     {
         healthBar = GetComponentInChildren<HealthBar>();
-        waveManager = FindObjectOfType<WaveManager>();  // Busca el WaveManager en la escena
+        waveManager = FindObjectOfType<WaveManager>();
         agent = GetComponent<NavMeshAgent>();
         isDead = false;
     }
@@ -43,23 +45,28 @@ public class Enemy : MonoBehaviour, IDamageable
         agent.speed = speed;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
+
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
-        {
             player = playerObj.transform;
-        }
         else
-        {
             Debug.LogWarning("No se encontró ningún objeto con el tag 'Player'");
-        }
     }
 
     void Update()
     {
-        agent.SetDestination(player.position);
         if (player == null) return;
+
+        agent.SetDestination(player.position);
         EnemyMovement();
+
+        
+        enemyOrientation = player.position - transform.position;
+
+        if (enemyOrientation.x > 0 && !isFacingRight) Flip();
+        if (enemyOrientation.x < 0 && isFacingRight) Flip();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,7 +81,8 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         enemyHealth -= damageAmount;
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
-        if (enemyHealth <= 0 && isDead == false )
+
+        if (enemyHealth <= 0 && !isDead)
         {
             isDead = true;
             EnemyDeath();
@@ -84,23 +92,25 @@ public class Enemy : MonoBehaviour, IDamageable
     void EnemyDeath()
     {
         if (waveManager != null)
-        {
-            waveManager.EnemyDefeated();   //enemigo ha sido derrotado
-        }
+            waveManager.EnemyDefeated();
 
         Destroy(gameObject);
     }
 
     void EnemyMovement()
     {
-        Vector2 direction = (player.position - transform.position).normalized;
-
-        
-
         transform.position = Vector2.MoveTowards(
             transform.position,
             player.position,
             speed * Time.deltaTime
         );
+    }
+
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 actualScale = transform.localScale;
+        actualScale.x *= -1;
+        transform.localScale = actualScale;
     }
 }
