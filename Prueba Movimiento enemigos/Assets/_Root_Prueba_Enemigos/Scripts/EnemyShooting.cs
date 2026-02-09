@@ -10,10 +10,10 @@ public class EnemyShooting : MonoBehaviour
     private float shootTimer;
 
     // Configuración del disparo
-    private int bulletCount = 3;
-    private float spreadAngle = 20f;
-    private float timeBetweenShots = 2.5f;
-    private float timeBetweenShotguns = 0.4f;
+    [SerializeField] int bulletCount = 3;
+    [SerializeField] float spreadAngle = 20f;
+    [SerializeField] float timeBetweenShots = 2.5f;
+    [SerializeField] float timeBetweenShotguns = 0.4f;
 
     void Start()
     {
