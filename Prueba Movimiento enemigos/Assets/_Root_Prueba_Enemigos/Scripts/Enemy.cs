@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour, IDamageable
     float enemyHealth;
     Transform player;
     WaveManager waveManager;  // Referencia al WaveManager
+    private NavMeshAgent agent;
 
     [SerializeField] HealthBar healthBar;
     [SerializeField] float baseHealth = 3f;  // Este es el valor base de la salud en el prefab
@@ -32,11 +34,15 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         healthBar = GetComponentInChildren<HealthBar>();
         waveManager = FindObjectOfType<WaveManager>();  // Busca el WaveManager en la escena
+        agent = GetComponent<NavMeshAgent>();
         isDead = false;
     }
 
     void Start()
     {
+        agent.speed = speed;
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -51,6 +57,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     void Update()
     {
+        agent.SetDestination(player.position);
         if (player == null) return;
         EnemyMovement();
     }
@@ -78,7 +85,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (waveManager != null)
         {
-            waveManager.EnemyDefeated();  // Notifica al WaveManager que este enemigo ha sido derrotado
+            waveManager.EnemyDefeated();   //enemigo ha sido derrotado
         }
 
         Destroy(gameObject);
@@ -88,9 +95,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         Vector2 direction = (player.position - transform.position).normalized;
 
-        // Rotación opcional (quítala si no quieres que rote)
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+        
 
         transform.position = Vector2.MoveTowards(
             transform.position,

@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] Slider barraVida;
     SpriteRenderer spriteRenderer;
     float blinkDuration = 0.2f;
+    public GameObject deathPanel;
     
 
     void Awake()
@@ -39,10 +40,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         StartInvencibility(invecibilityDuration);
     }
 
-    void Die()
+    public void Die()
     {
         gameObject.SetActive(false);
-        Invoke(nameof(SceneReload),2f);
+        SceneReload();
     }
 
     void StartInvencibility(float duration)
@@ -62,7 +63,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         invencibility = false;
         Debug.Log("no me pegues porfa");
     }
-    void SceneReload()
+    public void SceneReload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
