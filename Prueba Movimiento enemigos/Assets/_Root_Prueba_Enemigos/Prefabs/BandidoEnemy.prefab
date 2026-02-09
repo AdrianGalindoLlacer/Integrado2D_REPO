@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &362967321477280097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8898983905337214693}
+  m_Layer: 8
+  m_Name: EnemyBulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8898983905337214693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362967321477280097}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.36, y: 0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5324908217605196861}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4407927354450425365
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +318,7 @@ MonoBehaviour:
   enemyMaxHealth: 3
   enemyDamage: 1
   isDead: 0
+  isFacingRight: 0
   healthBar: {fileID: 3509529306097596898}
   baseHealth: 3
   baseDamage: 1
@@ -405,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooting
   enemyBullet: {fileID: 4812734406825896289, guid: 949e3bdd24081864cbe0191531dafed9, type: 3}
-  bulletPosition: {fileID: 0}
+  bulletPosition: {fileID: 8898983905337214693}
 --- !u!1 &5100680979821424654
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8898983905337214693}
   - {fileID: 197289465086821873}
   m_Father: {fileID: 2829512052732584849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
