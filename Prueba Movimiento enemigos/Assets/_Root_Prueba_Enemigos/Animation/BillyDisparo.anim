@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Escopeta
+  m_Name: BillyDisparo
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1732575787653606771, guid: caa0e73ec79645f428cb775816236623, type: 3}
+      value: {fileID: -2022188605487993816, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
     - time: 0.083333336
-      value: {fileID: -3176108326018761269, guid: caa0e73ec79645f428cb775816236623, type: 3}
+      value: {fileID: 1746772340, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
     - time: 0.16666667
-      value: {fileID: 5885389638736062598, guid: caa0e73ec79645f428cb775816236623, type: 3}
+      value: {fileID: 1248543784, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
     - time: 0.25
-      value: {fileID: -4200875843989232284, guid: caa0e73ec79645f428cb775816236623, type: 3}
+      value: {fileID: 145132396, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1732575787653606771, guid: caa0e73ec79645f428cb775816236623, type: 3}
-    - {fileID: -3176108326018761269, guid: caa0e73ec79645f428cb775816236623, type: 3}
-    - {fileID: 5885389638736062598, guid: caa0e73ec79645f428cb775816236623, type: 3}
-    - {fileID: -4200875843989232284, guid: caa0e73ec79645f428cb775816236623, type: 3}
+    - {fileID: -2022188605487993816, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
+    - {fileID: 1746772340, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
+    - {fileID: 1248543784, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
+    - {fileID: 145132396, guid: c6f9f42ef7f057848bef529c9a99fed8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
