@@ -73,7 +73,7 @@ public class WaveManager : MonoBehaviour
             Quaternion.identity
         );
 
-        // 🔒 FIX IMPORTANTE: forzar escala limpia
+        
         newEnemy.transform.localScale = Vector3.one;
 
         Enemy enemyScript = newEnemy.GetComponent<Enemy>();

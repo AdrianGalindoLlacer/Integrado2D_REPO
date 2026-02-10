@@ -14,7 +14,7 @@ public class LevelUpSystem : MonoBehaviour
     [Header("Upgrade UI")]
     public UpgradeButton[] upgradeButtons;
 
-    // Modificadores acumulables (NO stats base)
+    
     float damageMultiplier = 1f;
     float moveSpeedBonus = 0f;
     float enemySlowMultiplier = 1f;

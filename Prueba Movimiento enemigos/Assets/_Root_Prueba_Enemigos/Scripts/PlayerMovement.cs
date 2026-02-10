@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        // Dash hacia la dirección en la que caminas
+        
         playerRb.linearVelocity = new Vector2(
             moveDirection.x * dashSpeed,
             moveDirection.y * dashSpeed

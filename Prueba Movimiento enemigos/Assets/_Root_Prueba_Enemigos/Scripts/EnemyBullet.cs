@@ -29,7 +29,7 @@ public class EnemyBulletScript : MonoBehaviour
     {
         if (collision.TryGetComponent(out IDamageable damageable))
         {
-            damageable.TakeDamage(1f); // o el daño que quieras
+            damageable.TakeDamage(1f);
             Destroy(gameObject);
         }
     }

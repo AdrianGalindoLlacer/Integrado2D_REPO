@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (player == null) return;
 
         agent.SetDestination(player.position);
-        EnemyMovement();
+        
 
         
         enemyOrientation = player.position - transform.position;
@@ -97,14 +97,7 @@ public class Enemy : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    void EnemyMovement()
-    {
-        transform.position = Vector2.MoveTowards(
-            transform.position,
-            player.position,
-            speed * Time.deltaTime
-        );
-    }
+   
 
     void Flip()
     {

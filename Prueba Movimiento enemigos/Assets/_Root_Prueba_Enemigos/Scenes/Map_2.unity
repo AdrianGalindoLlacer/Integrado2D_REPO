@@ -1183,7 +1183,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 367878598}
   - {fileID: 495057914}
-  player: {fileID: 1464509802}
+  player: {fileID: 0}
   upgradeClicked: 1
   upgradesPanel: {fileID: 1238063250}
   enemyProbabilities:
@@ -13395,17 +13395,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &933635986 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7438765578792044998, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
-  m_PrefabInstance: {fileID: 1464509801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3163b88a2fd2be4780b3e5c604bc6b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
 --- !u!1 &985223050
 GameObject:
   m_ObjectHideFlags: 0
@@ -21208,17 +21197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238063250}
   m_CullTransparentMesh: 1
---- !u!114 &1269374796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5908897071227328660, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
-  m_PrefabInstance: {fileID: 1464509801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 417f68076ddfe724a904c95236d85eca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Weapon
 --- !u!1 &1304677382
 GameObject:
   m_ObjectHideFlags: 0
@@ -21550,11 +21528,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
---- !u!4 &1464509802 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8471926827003352078, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
-  m_PrefabInstance: {fileID: 1464509801}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1464922550
 GameObject:
   m_ObjectHideFlags: 0
@@ -23809,10 +23782,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelUpSystem
   waveManager: {fileID: 465148355}
-  playerHealth: {fileID: 2142605341}
-  playerMovement: {fileID: 2142605342}
-  weapon: {fileID: 1269374796}
-  healthBar: {fileID: 933635986}
+  playerHealth: {fileID: 0}
+  playerMovement: {fileID: 0}
+  weapon: {fileID: 0}
+  healthBar: {fileID: 0}
   upgradeButtons:
   - {fileID: 100217444}
   - {fileID: 743678149}
@@ -24430,28 +24403,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2142605341 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8067342010970865618, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
-  m_PrefabInstance: {fileID: 1464509801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c820bc39b37dfa48aa6c5d611907e33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
---- !u!114 &2142605342 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7072223626077868674, guid: 7f07e2b7e66d65644951fd5e727c8758, type: 3}
-  m_PrefabInstance: {fileID: 1464509801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d5fa42823a9814bbe9dbe4a3339de6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1001 &582047836671555843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24507,7 +24458,7 @@ PrefabInstance:
     - target: {fileID: 5442946375626285137, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
       propertyPath: objetivo
       value: 
-      objectReference: {fileID: 1464509802}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
