@@ -501,9 +501,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   speed: 1.5
-  enemyMaxHealth: 1000
+  enemyMaxHealth: 3
   enemyDamage: 1
   isDead: 0
+  isFacingRight: 0
   healthBar: {fileID: 6627233336297219704}
   baseHealth: 10
   baseDamage: 1

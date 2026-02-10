@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197289465086821873}
   - component: {fileID: 2704145246794145515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: escopeta_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 2089559921595725103}
   - component: {fileID: 771787428170935435}
   - component: {fileID: 5368124258950778559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BandidoEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -438,6 +438,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooting
   enemyBullet: {fileID: 4812734406825896289, guid: 949e3bdd24081864cbe0191531dafed9, type: 3}
   bulletPosition: {fileID: 8898983905337214693}
+  bulletCount: 3
+  spreadAngle: 20
+  timeBetweenShots: 2.5
+  timeBetweenShotguns: 0.4
 --- !u!1 &5100680979821424654
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5324908217605196861}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2829512052732584849}
   - component: {fileID: 7281002989787579352}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

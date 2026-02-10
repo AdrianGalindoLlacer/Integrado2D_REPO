@@ -1,22 +1,22 @@
-using UnityEngine;
+    using UnityEngine;
 
-public class Bullet : MonoBehaviour
-{
-    public float lifeTime = 3f;
-    public int damage = 1;
-
-    void Start()
+    public class Bullet : MonoBehaviour
     {
-        Destroy(gameObject, lifeTime);
-    }
+        public float lifeTime = 3f;
+        public int damage = 1;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+        void Start()
         {
-            damageable.TakeDamage(damage);
+            Destroy(gameObject, lifeTime);
         }
 
-        Destroy(gameObject);
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(damage);
+            }
+
+            Destroy(gameObject);
+        }
     }
-}

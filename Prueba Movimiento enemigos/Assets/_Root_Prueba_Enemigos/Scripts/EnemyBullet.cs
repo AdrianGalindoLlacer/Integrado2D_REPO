@@ -27,7 +27,10 @@ public class EnemyBulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.TakeDamage(1f); // o el daño que quieras
             Destroy(gameObject);
+        }
     }
 }

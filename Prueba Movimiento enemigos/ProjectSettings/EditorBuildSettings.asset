@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Root_Prueba_Enemigos/Scenes/SCN_Main_Menu.unity
     guid: f8d29f50b8ea99e4b90f68ba41ef3f7b
   - enabled: 1
-    path: Assets/_Root_Prueba_Enemigos/Scenes/Scene_Pruebas 2.unity
+    path: Assets/_Root_Prueba_Enemigos/Scenes/Map_1.unity
     guid: b4d540eb52a7eb84f8dd9e16240b5ef9
   - enabled: 0
     path: Assets/_Root_Prueba_Enemigos/Scenes/SCN_Map_1.unity
