@@ -43,7 +43,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void Die()
     {
         gameObject.SetActive(false);
-        SceneReload();
+        deathPanel.SetActive(true);
+        
     }
 
     void StartInvencibility(float duration)

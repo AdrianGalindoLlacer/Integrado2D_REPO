@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             weapon.Fire();
         }
 
-        // 🔥 Control animación movimiento
+        
         bool isMoving = moveInput.magnitude > 0.1f;
         anim.SetBool("Run", isMoving);
     }
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        // 🔥 Activamos parámetro Dash
+        
         anim.SetBool("Dash", true);
 
         playerRb.linearVelocity = moveDirection * dashSpeed;
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
         isDashing = false;
 
-        // 🔥 Desactivamos parámetro Dash
+        
         anim.SetBool("Dash", false);
 
         yield return new WaitForSeconds(dashCooldown);
