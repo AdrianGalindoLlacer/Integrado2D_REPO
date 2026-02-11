@@ -13,7 +13,7 @@ public class EnemyAim : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No se encontró ningún objeto con el tag Player");
+            Debug.LogWarning("No se encontrï¿½ ningï¿½n objeto con el tag Player");
         }
     }
 

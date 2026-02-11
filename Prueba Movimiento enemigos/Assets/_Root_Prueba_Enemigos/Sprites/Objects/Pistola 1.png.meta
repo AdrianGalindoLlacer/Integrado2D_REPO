@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee78569a4cf01214291f40c5a176e33a
+guid: 4757cedc540a3bc4c81a450ff1357bbe
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -181,7 +181,7 @@ TextureImporter:
         color:
           serializedVersion: 2
           rgba: 4278255615
-      - name: "ca\xF1on1"
+      - name: "\0\0\0\0<\0\0"
         guid: 3995847ee1612934e88852ad544e6519
         position: {x: 8.768486, y: -0.0000005619658, z: 0}
         rotation: {x: 0, y: 0, z: -0.16163392, w: 0.9868508}
@@ -190,7 +190,7 @@ TextureImporter:
         color:
           serializedVersion: 2
           rgba: 4278255360
-      - name: "ca\xF1on2"
+      - name: "\0\0K\v|\0\x7F"
         guid: bccf6f808ebfea9449f7bfa2aee198e8
         position: {x: 8.317505, y: -0.00000050503405, z: 0}
         rotation: {x: 0, y: 0, z: 0.010666933, w: 0.99994314}

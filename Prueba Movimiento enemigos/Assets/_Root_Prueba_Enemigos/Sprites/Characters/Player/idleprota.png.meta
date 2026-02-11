@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 2b896bb8ffe95604fa097826a2b59d12
+guid: 58d0efebac7277a48824682618d3cd8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2162319032124755637
-    second: DashProta_0
+      213: 7858042564263903240
+    second: idleprota_0
   - first:
-      213: 3794182060285330593
-    second: DashProta_1
+      213: 6012535449083286391
+    second: idleprota_1
   - first:
-      213: 3523982658563419087
-    second: DashProta_2
+      213: 7553149376873251928
+    second: idleprota_2
   - first:
-      213: -2749480158545531379
-    second: DashProta_3
+      213: 1983024436576353398
+    second: idleprota_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DashProta_0
+      name: idleprota_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5beccd804b9120e10800000000000000
-      internalID: 2162319032124755637
+      spriteID: 80089d814106d0d60800000000000000
+      internalID: 7858042564263903240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashProta_1
+      name: idleprota_1
       rect:
         serializedVersion: 2
         x: 32
@@ -146,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a4877c3b74a7a430800000000000000
-      internalID: 3794182060285330593
+      spriteID: 7739d0a9221d07350800000000000000
+      internalID: 6012535449083286391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashProta_2
+      name: idleprota_2
       rect:
         serializedVersion: 2
         x: 64
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fcb2f4e9e83b7e030800000000000000
-      internalID: 3523982658563419087
+      spriteID: 8544ef7075d22d860800000000000000
+      internalID: 7553149376873251928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashProta_3
+      name: idleprota_3
       rect:
         serializedVersion: 2
         x: 96
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0ea8e8fc52e7d9d0800000000000000
-      internalID: -2749480158545531379
+      spriteID: 67c7d03f73e158b10800000000000000
+      internalID: 1983024436576353398
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cc48eb8b5c5b2c040a369173d831576f
+    spriteID: 7d9faa8ad351f0045a4edcd4125f7b77
     internalID: 0
     vertices: []
     indices: 
@@ -212,10 +212,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DashProta_0: 2162319032124755637
-      DashProta_1: 3794182060285330593
-      DashProta_2: 3523982658563419087
-      DashProta_3: -2749480158545531379
+      idleprota_0: 7858042564263903240
+      idleprota_1: 6012535449083286391
+      idleprota_2: 7553149376873251928
+      idleprota_3: 1983024436576353398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
