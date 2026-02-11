@@ -540,6 +540,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178784692}
   m_CullTransparentMesh: 1
+--- !u!1 &208386303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208386305}
+  - component: {fileID: 208386304}
+  m_Layer: 0
+  m_Name: Global Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &208386304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208386303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 2
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000d78424800d75f572
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &208386305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208386303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7774677, y: -0.07456136, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &251516838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1150,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3661023543310808789, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661023543310808789, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+      propertyPath: fireForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4457099806814700336, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
       propertyPath: barraVida
       value: 
@@ -1252,7 +1344,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 367878598}
   - {fileID: 495057914}
-  player: {fileID: 0}
+  player: {fileID: 1450245195}
   upgradeClicked: 1
   upgradesPanel: {fileID: 1238063250}
   enemyProbabilities:
@@ -1884,6 +1976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 533691022}
   - component: {fileID: 533691021}
+  - component: {fileID: 533691023}
   - component: {fileID: 533691020}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -1936,10 +2029,10 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 12
+    FieldOfView: 40
     OrthographicSize: 7.297292
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 998.2
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -1964,12 +2057,31 @@ Transform:
   m_GameObject: {fileID: 533691019}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5693707, y: -0.7396766, z: -31.104595}
+  m_LocalPosition: {x: -10.75233, y: -3.26678, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &533691023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533691019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
+  TrackerSettings:
+    BindingMode: 4
+    PositionDamping: {x: 1, y: 1, z: 1}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1, y: 1, z: 1}
+    QuaternionDamping: 1
+  FollowOffset: {x: 0, y: 0, z: -10}
 --- !u!1 &559229852
 GameObject:
   m_ObjectHideFlags: 0
@@ -12338,6 +12450,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &671477522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3840667295473884895, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+  m_PrefabInstance: {fileID: 396078049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3163b88a2fd2be4780b3e5c604bc6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
 --- !u!1 &683914028
 GameObject:
   m_ObjectHideFlags: 0
@@ -21544,6 +21667,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9121770678878321075, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
   m_PrefabInstance: {fileID: 396078049}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450245197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4457099806814700336, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+  m_PrefabInstance: {fileID: 396078049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c820bc39b37dfa48aa6c5d611907e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!114 &1450245199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7146787058578199659, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+  m_PrefabInstance: {fileID: 396078049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d5fa42823a9814bbe9dbe4a3339de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1 &1459735639
 GameObject:
   m_ObjectHideFlags: 0
@@ -23935,10 +24080,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelUpSystem
   waveManager: {fileID: 465148355}
-  playerHealth: {fileID: 0}
-  playerMovement: {fileID: 0}
-  weapon: {fileID: 0}
-  healthBar: {fileID: 0}
+  playerHealth: {fileID: 1450245197}
+  playerMovement: {fileID: 1450245199}
+  weapon: {fileID: 2068061230}
+  healthBar: {fileID: 671477522}
   upgradeButtons:
   - {fileID: 100217444}
   - {fileID: 743678149}
@@ -24382,6 +24527,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2068061230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3661023543310808789, guid: 73b9b2dcd6108b94bb34778a6cd1c0d6, type: 3}
+  m_PrefabInstance: {fileID: 396078049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417f68076ddfe724a904c95236d85eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon
 --- !u!1 &2096057256
 GameObject:
   m_ObjectHideFlags: 0
@@ -24570,19 +24726,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1052553349986278386, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
       propertyPath: field of view
-      value: 12
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052553349986278386, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
+      propertyPath: far clip plane
+      value: 998.2
       objectReference: {fileID: 0}
     - target: {fileID: 4239164349102813307, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5693707
+      value: -10.75233
       objectReference: {fileID: 0}
     - target: {fileID: 4239164349102813307, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7396766
+      value: -3.26678
       objectReference: {fileID: 0}
     - target: {fileID: 4239164349102813307, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.104595
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4239164349102813307, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24645,3 +24805,4 @@ SceneRoots:
   - {fileID: 1851863504}
   - {fileID: 396078049}
   - {fileID: 533691022}
+  - {fileID: 208386305}
