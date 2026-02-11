@@ -236,11 +236,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5659327194622369101}
   - component: {fileID: 1689773091017935007}
-  - component: {fileID: 7524174201617777191}
   - component: {fileID: 6797446821603028283}
   - component: {fileID: 2089559921595725103}
   - component: {fileID: 771787428170935435}
   - component: {fileID: 5368124258950778559}
+  - component: {fileID: 1268033719439359040}
   m_Layer: 8
   m_Name: BandidoEnemy
   m_TagString: Enemy
@@ -302,26 +302,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.013153225, y: -0.0038686097}
   m_Size: {x: 0.40870112, y: 0.8034753}
   m_Direction: 0
---- !u!114 &7524174201617777191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089585186655556606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 682d11c68ee29634f83b86fc03d04930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  speed: 2
-  enemyMaxHealth: 3
-  enemyDamage: 1
-  isDead: 0
-  isFacingRight: 0
-  healthBar: {fileID: 3509529306097596898}
-  baseHealth: 3
-  baseDamage: 1
 --- !u!95 &6797446821603028283
 Animator:
   serializedVersion: 7
@@ -442,6 +422,23 @@ MonoBehaviour:
   spreadAngle: 20
   timeBetweenShots: 2.5
   timeBetweenShotguns: 0.4
+--- !u!114 &1268033719439359040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089585186655556606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cec7a56d8633648aba17a3cdc188bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBilly
+  speed: 2
+  baseHealth: 3
+  baseDamage: 1
+  shootCooldown: 2
+  healthBar: {fileID: 3509529306097596898}
 --- !u!1 &5100680979821424654
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 888625322024190812}
   - component: {fileID: 5119924240988486659}
-  - component: {fileID: 6464502226075029327}
   - component: {fileID: 1816398386024309812}
   - component: {fileID: 6092409942412787315}
   - component: {fileID: 5975800276105969477}
   - component: {fileID: 8007548770461667938}
+  - component: {fileID: 5576560203913838487}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -97,26 +97,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6464502226075029327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088678285315674881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 682d11c68ee29634f83b86fc03d04930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  speed: 1
-  enemyMaxHealth: 3
-  enemyDamage: 1
-  isDead: 0
-  isFacingRight: 0
-  healthBar: {fileID: 8532264626386961826}
-  baseHealth: 3
-  baseDamage: 1
 --- !u!61 &1816398386024309812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,6 +205,24 @@ MonoBehaviour:
   spreadAngle: 360
   timeBetweenShots: 2.5
   timeBetweenShotguns: 2.5
+--- !u!114 &5576560203913838487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088678285315674881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9e74429aa60764b8aba8935cfc4d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCactus
+  speed: 1
+  baseHealth: 3
+  baseDamage: 1
+  healthBar: {fileID: 8532264626386961826}
+  isDead: 0
+  isFacingRight: 0
 --- !u!1 &8763893105278777072
 GameObject:
   m_ObjectHideFlags: 0

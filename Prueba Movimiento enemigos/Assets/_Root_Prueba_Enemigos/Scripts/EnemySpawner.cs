@@ -42,19 +42,33 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             GameObject enemy = Instantiate(
-                enemyPrefabs[Random.Range(0, enemyPrefabs.Length)],
-                transform.position,
-                Quaternion.identity
+                enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]
             );
 
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
-            if (enemyScript != null)
+        
+            enemy.transform.SetParent(null);
+            enemy.transform.position = new Vector3(
+                transform.position.x,
+                transform.position.y,
+                0f
+            );
+
+            enemy.transform.rotation = Quaternion.identity;
+            enemy.transform.localScale = Vector3.one;
+
+            IEnemyStats enemyStats = enemy.GetComponent<IEnemyStats>();
+            if (enemyStats != null)
             {
-                enemyScript.SetStats(healthMultiplier, damageMultiplier);
+                enemyStats.SetStats(healthMultiplier, damageMultiplier);
+            }
+            else
+            {
+                Debug.LogWarning(
+                    $"El enemigo {enemy.name} no implementa IEnemyStats"
+                );
             }
 
             yield return new WaitForSeconds(spawnRate);
         }
     }
 }
-

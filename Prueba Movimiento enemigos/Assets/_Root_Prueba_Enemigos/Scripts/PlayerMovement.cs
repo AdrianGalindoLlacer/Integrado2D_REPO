@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public float dashDuration = 0.15f;
     public float dashCooldown = 0.8f;
     bool canDash = true;
-    Vector2 aimDirection;
 
     [Header("Weapon")]
     public Weapon weapon;
@@ -23,10 +22,6 @@ public class PlayerMovement : MonoBehaviour
     Vector2 mousePosition;
 
     bool isDashing;
-    float dashTime;
-    float dashCooldownTimer;
-    Vector2 dashDirection;
-
     Vector2 moveInput;
     private Animator anim;
 
@@ -36,56 +31,40 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        canDash = true;
-    }
-
     void Update()
     {
         if (isDashing)
-        {
             return;
-        }
 
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = -Camera.main.transform.position.z;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
-        aimDirection = (mousePosition - playerRb.position).normalized;
-
+        // Flip
         if (moveInput.x > 0 && !isFacingRight) Flip();
         if (moveInput.x < 0 && isFacingRight) Flip();
 
+        // Disparo
         if (Input.GetMouseButton(0) && weapon != null)
         {
             weapon.Fire();
         }
 
-        if (dashCooldownTimer > 0)
-            dashCooldownTimer -= Time.deltaTime;
+        // 🔥 Control animación movimiento
+        bool isMoving = moveInput.magnitude > 0.1f;
+        anim.SetBool("Run", isMoving);
     }
 
     void FixedUpdate()
     {
         if (isDashing)
-        {
             return;
-        }
 
-        Movement();
-    }
-
-    void Movement()
-    {
-        playerRb.linearVelocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+        playerRb.linearVelocity = moveInput * moveSpeed;
     }
 
     void Flip()
     {
         isFacingRight = !isFacingRight;
-        Vector3 actualScale = transform.localScale;
-        actualScale.x *= -1;
-        transform.localScale = actualScale;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     private IEnumerator Dash()
@@ -93,27 +72,27 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        
-        playerRb.linearVelocity = new Vector2(
-            moveDirection.x * dashSpeed,
-            moveDirection.y * dashSpeed
-        );
+        // 🔥 Activamos parámetro Dash
+        anim.SetBool("Dash", true);
+
+        playerRb.linearVelocity = moveDirection * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
 
+        // 🔥 Desactivamos parámetro Dash
+        anim.SetBool("Dash", false);
+
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 
-    #region Input Methods
+    #region Input
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-
-        
         moveDirection = moveInput.normalized;
     }
 
