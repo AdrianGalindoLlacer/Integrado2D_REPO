@@ -348,6 +348,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6745639061524929587, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745639061524929587, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+      propertyPath: m_Color.g
+      value: 0.030464293
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745639061524929587, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5372549
+      objectReference: {fileID: 0}
     - target: {fileID: 6871269972984432049, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -359,6 +371,18 @@ PrefabInstance:
     - target: {fileID: 7641532424575033011, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925269333958752248, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925269333958752248, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925269333958752248, guid: d5210e7871ae7a3448e7e847cf04f819, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960784
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
