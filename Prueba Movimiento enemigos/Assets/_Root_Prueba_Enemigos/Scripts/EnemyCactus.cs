@@ -77,7 +77,10 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
         if (enemyOrientation.x < 0 && isFacingRight) Flip();
     }
 
-
+     private void LateUpdate()
+    {
+        transform.rotation = Quaternion.identity;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

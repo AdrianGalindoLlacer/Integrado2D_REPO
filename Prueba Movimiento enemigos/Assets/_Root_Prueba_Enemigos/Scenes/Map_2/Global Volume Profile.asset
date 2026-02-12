@@ -33,9 +33,9 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 1
   response:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.708
   texture:
     m_OverrideState: 0

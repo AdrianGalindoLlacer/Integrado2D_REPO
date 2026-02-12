@@ -93,7 +93,10 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
             lastAttackTime = Time.time;
         }
     }
-
+     private void LateUpdate()
+    {
+        transform.rotation = Quaternion.identity;
+    }
     private void AttackPlayer()
     {
         if (player.TryGetComponent<IDamageable>(out IDamageable dmg))

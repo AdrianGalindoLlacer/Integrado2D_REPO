@@ -79,7 +79,10 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
             shootTimer = 0f;
         }
     }
-
+    private void LateUpdate()
+    {
+        transform.rotation = Quaternion.identity;
+    }
     private void Shoot()
     {
         anim.SetTrigger("Shoot");
