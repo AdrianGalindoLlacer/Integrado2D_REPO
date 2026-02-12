@@ -104,6 +104,7 @@ public class LevelUpSystem : MonoBehaviour
             button.Setup(temp[index], this);
             temp.RemoveAt(index);
         }
+        Time.timeScale = 0;
     }
 
     public void ApplyUpgrade(Upgrade upgrade)
@@ -143,12 +144,13 @@ public class LevelUpSystem : MonoBehaviour
 
         
         waveManager.upgradeClicked = true;
+        Time.timeScale = 1;
     }
 
     public void PausePlayer()
     {
         playerMovement.enabled = false;
-        weapon.enabled = false;
+        weapon.enabled = false;      
     }
     public void UnpausePlayer()
     {

@@ -104,6 +104,9 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
-
+    void OnDisable()
+    {
+        moveInput = Vector2.zero;
+    }
     #endregion
 }
