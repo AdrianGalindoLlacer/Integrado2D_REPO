@@ -622,8 +622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348b56600b5809241a60366298b23334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyEscorpion
-  speed: 1.5
-  baseHealth: 3
+  speed: 2.5
+  baseHealth: 7
   baseDamage: 2
   attackRange: 1
   attackCooldown: 1

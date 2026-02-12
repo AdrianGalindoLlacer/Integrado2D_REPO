@@ -207,7 +207,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4375
-  m_Speed: 1.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -235,8 +235,8 @@ MonoBehaviour:
   bulletPosition: {fileID: 711091013218438646}
   bulletCount: 8
   spreadAngle: 360
-  timeBetweenShots: 2.5
-  timeBetweenShotguns: 2.5
+  timeBetweenShots: 1.5
+  timeBetweenShotguns: 1.5
 --- !u!114 &5576560203913838487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,9 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9e74429aa60764b8aba8935cfc4d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCactus
-  speed: 1
-  baseHealth: 3
-  baseDamage: 1
+  speed: 2
+  baseHealth: 4
+  baseDamage: 2
   healthBar: {fileID: 8532264626386961826}
   isDead: 0
   isFacingRight: 0
