@@ -53,6 +53,7 @@ public class EnemyShooting : MonoBehaviour
 
         for (int i = 0; i < bulletCount; i++)
         {
+            AudioManager.Instance.PlaySFX(3);
             float angle = startAngle + angleStep * i;
             Vector2 shootDirection =
                 Quaternion.AngleAxis(angle, Vector3.forward) * baseDirection;

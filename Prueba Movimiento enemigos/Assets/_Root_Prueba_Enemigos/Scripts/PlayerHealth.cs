@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             return;
         }
+        AudioManager.Instance.PlaySFX(1);
         currentHealth -= playerDamage;
         currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
         Debug.Log(currentHealth);

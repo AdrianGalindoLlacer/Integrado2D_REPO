@@ -104,6 +104,7 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
     {
         if (isDead) return;
 
+        AudioManager.Instance.PlaySFX(0);
         enemyHealth -= damageAmount;
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
 

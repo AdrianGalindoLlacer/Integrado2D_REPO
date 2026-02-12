@@ -33,64 +33,64 @@ public class LevelUpSystem : MonoBehaviour
         {
             type = UpgradeType.AumentarDanio,
             value = 0.2f,
-            title = "Más daño",
-            description = "+20% daño"
+            title = "More Damage",
+            description = "Damage +20%"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.AumentarVelocidadMovimiento,
             value = 1f,
-            title = "Velocidad",
-            description = "+1 movimiento"
+            title = "Speed Upgrade",
+            description = "Speed Movement +1"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.AumentarSaludMaxima,
             value = 5f,
-            title = "Más vida",
-            description = "+5 salud máxima"
+            title = "Increase Max Health",
+            description = "Max Health +5"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.RalentizarEnemigos,
             value = 0.9f,
-            title = "Ralentizar enemigos",
-            description = "-10% velocidad enemigos"
+            title = "Slower Enemies",
+            description = "Enemies Speed -10%"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.AumentarVelocidadDisparo,
             value = 0.9f,
-            title = "Disparo rápido",
-            description = "Mayor velocidad de disparo"
+            title = "Faster Gun",
+            description = "Faster Fire Rate"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.ReducirDanioEnemigos,
             value = 0.9f,
-            title = "Menos daño enemigo",
-            description = "-10% daño enemigo"
+            title = "Reduce Enemy Damage",
+            description = "Enemy Damage -10%"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.CurarSalud,
             value = 5f,
-            title = "Curar",
-            description = "Recupera 5 de vida"
+            title = "Heal Up",
+            description = "Recover 5 Health Points"
         });
 
         allUpgrades.Add(new Upgrade
         {
             type = UpgradeType.AumentarDistanciaDash,
             value = 1.2f,
-            title = "Dash largo",
-            description = "Aumenta la distancia del dash"
+            title = "Better Dash",
+            description = "Increase Dash Distance"
         });
     }
 

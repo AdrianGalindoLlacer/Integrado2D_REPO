@@ -20,6 +20,7 @@ public class Weapon : MonoBehaviour
 
         fireTimer = fireRate;
 
+        AudioManager.Instance.PlaySFX(2);
         GameObject bullet = Instantiate(
             bulletPrefab,
             firePoint.position,

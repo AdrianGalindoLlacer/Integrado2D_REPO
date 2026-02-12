@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         
         anim.SetBool("Dash", true);
 
+        AudioManager.Instance.PlaySFX(4);
         playerRb.linearVelocity = moveDirection * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);

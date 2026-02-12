@@ -99,6 +99,7 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
     {
         if (isDead) return;
 
+        AudioManager.Instance.PlaySFX(0);
         currentHealth -= damage;
         healthBar.UpdateHealthBar(currentHealth, baseHealth);
 
