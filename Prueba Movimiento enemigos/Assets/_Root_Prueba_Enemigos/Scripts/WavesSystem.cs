@@ -30,6 +30,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
+        AudioManager.Instance.PlaySFX(5);
         waveNumber++;
         enemiesPerWave = Mathf.FloorToInt(enemiesPerWave * 1.2f);
         remainingEnemies = enemiesPerWave;
@@ -76,11 +77,12 @@ public class WaveManager : MonoBehaviour
         
         newEnemy.transform.localScale = Vector3.one;
 
-        Enemy enemyScript = newEnemy.GetComponent<Enemy>();
+        IEnemyStats enemyScript = newEnemy.GetComponent<IEnemyStats>();
         if (enemyScript != null)
         {
             enemyScript.SetStats(healthMultiplier, damageMultiplier);
         }
+
     }
 
     GameObject SelectEnemyPrefab()

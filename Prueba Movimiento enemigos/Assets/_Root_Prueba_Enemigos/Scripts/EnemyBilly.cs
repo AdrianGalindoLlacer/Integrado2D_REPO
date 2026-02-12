@@ -27,7 +27,7 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
     private float currentHealth;
     private float currentDamage;
 
-    #region Initialization
+
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
             player = playerObj.transform;
     }
 
-    // ✅ SOLO UNA VEZ
+   
     public void SetStats(float healthMultiplier, float damageMultiplier)
     {
         baseHealth *= healthMultiplier;
@@ -63,9 +63,7 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
         currentDamage = baseDamage;
     }
 
-    #endregion
-
-    #region Update
+  
 
     private void Update()
     {
@@ -82,18 +80,11 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
         }
     }
 
-    #endregion
-
-    #region Shooting
-
     private void Shoot()
     {
         anim.SetTrigger("Shoot");
     }
 
-    #endregion
-
-    #region Damage / Death
 
     public void TakeDamage(float damage)
     {
@@ -125,10 +116,6 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
         Destroy(gameObject, 2f);
     }
 
-    #endregion
-
-    #region Flip
-
     private void HandleFlip()
     {
         float dir = player.position.x - transform.position.x;
@@ -147,5 +134,4 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
         transform.localScale = scale;
     }
 
-    #endregion
 }

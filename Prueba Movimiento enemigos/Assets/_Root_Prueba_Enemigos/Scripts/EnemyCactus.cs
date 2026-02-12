@@ -24,7 +24,6 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
     private float currentDamage;
     private Vector2 enemyOrientation;
 
-    #region Initialization
 
     private void Awake()
     {
@@ -53,7 +52,7 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
             Debug.LogWarning("No se encontró ningún objeto con el tag 'Player'");
     }
 
-    // 🔥 ESCALADO POR OLEADAS (INTERFAZ)
+   
     public void SetStats(float healthMultiplier, float damageMultiplier)
     {
         baseHealth *= healthMultiplier;
@@ -66,9 +65,6 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
     }
 
-    #endregion
-
-    #region Update Movement
 
     private void Update()
     {
@@ -81,9 +77,7 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
         if (enemyOrientation.x < 0 && isFacingRight) Flip();
     }
 
-    #endregion
 
-    #region Collision / Attack
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -96,9 +90,6 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
         }
     }
 
-    #endregion
-
-    #region Damage / Death
 
     public void TakeDamage(float damageAmount)
     {
@@ -130,10 +121,6 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
         Destroy(gameObject, 2f);
     }
 
-    #endregion
-
-    #region Flip Sprite
-
     private void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -142,5 +129,4 @@ public class EnemyCactus : MonoBehaviour, IDamageable, IEnemyStats
         transform.localScale = scale;
     }
 
-    #endregion
 }

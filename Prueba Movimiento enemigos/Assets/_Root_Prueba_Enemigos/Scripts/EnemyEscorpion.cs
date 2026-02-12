@@ -29,7 +29,6 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
     private Vector2 enemyOrientation;
     private float lastAttackTime = 0f;
 
-    #region Initialization
 
     private void Awake()
     {
@@ -70,9 +69,7 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
         healthBar.UpdateHealthBar(enemyHealth, currentHealth);
     }
 
-    #endregion
 
-    #region Update Movement & Attack
 
     private void Update()
     {
@@ -83,12 +80,12 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
         // Animación de movimiento
         anim.SetBool("escorpionMovimiento", agent.velocity.magnitude > 0.1f);
 
-        // Flip del sprite según posición del jugador
+        
         enemyOrientation = player.position - transform.position;
         if (enemyOrientation.x > 0 && !isFacingRight) Flip();
         if (enemyOrientation.x < 0 && isFacingRight) Flip();
 
-        // Ataque por proximidad
+        
         if (Vector2.Distance(transform.position, player.position) <= attackRange &&
             Time.time >= lastAttackTime + attackCooldown)
         {
@@ -106,9 +103,6 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
         }
     }
 
-    #endregion
-
-    #region Damage / Death
 
     public void TakeDamage(float damageAmount)
     {
@@ -140,9 +134,6 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
         Destroy(gameObject, 2f);
     }
 
-    #endregion
-
-    #region Flip Sprite
 
     private void Flip()
     {
@@ -152,5 +143,4 @@ public class EnemyEscorpion : MonoBehaviour, IDamageable, IEnemyStats
         transform.localScale = scale;
     }
 
-    #endregion
 }
