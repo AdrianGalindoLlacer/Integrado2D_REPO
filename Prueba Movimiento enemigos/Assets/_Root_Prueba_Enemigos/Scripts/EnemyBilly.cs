@@ -106,7 +106,7 @@ public class EnemyBilly : MonoBehaviour, IDamageable, IEnemyStats
     private void Die()
     {
         isDead = true;
-
+        
         agent.isStopped = true;
         agent.enabled = false;
 
