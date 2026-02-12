@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4229046723907169443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,10 +252,6 @@ MonoBehaviour:
   speed: 1
   baseHealth: 3
   baseDamage: 1
-  attackRange: 5
-  attackCooldown: 1
-  bulletPrefab: {fileID: 5792184338096282732}
-  firePoint: {fileID: 4229046723907169443}
   healthBar: {fileID: 8532264626386961826}
   isDead: 0
   isFacingRight: 0

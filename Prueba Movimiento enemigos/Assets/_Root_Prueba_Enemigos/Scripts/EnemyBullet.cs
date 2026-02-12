@@ -30,7 +30,9 @@ public class EnemyBulletScript : MonoBehaviour
         if (collision.TryGetComponent(out IDamageable damageable))
         {
             damageable.TakeDamage(1f);
-            Destroy(gameObject);
+            
         }
+        Debug.Log(collision.name);
+        Destroy(gameObject);
     }
 }
