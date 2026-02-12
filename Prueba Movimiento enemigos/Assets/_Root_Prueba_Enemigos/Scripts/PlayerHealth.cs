@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void Die()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 0;
         deathPanel.SetActive(true);
         
     }
