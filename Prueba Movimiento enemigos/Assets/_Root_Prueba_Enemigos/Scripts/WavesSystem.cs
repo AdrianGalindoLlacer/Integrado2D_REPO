@@ -13,6 +13,11 @@ public class WaveManager : MonoBehaviour
     public bool upgradeClicked = true;
     public GameObject upgradesPanel;
 
+    [Header("Enemy Scaling Settings")]
+    public float damageIncreasePerWave = 0.05f;   // incremento fijo por ronda
+    public float healthIncreasePerWave = 0.08f;   // opcional, puedes ajustarlo distinto
+    public float tenWaveMultiplier = 1.2f;        // bonus cada 10 rondas
+
     [Header("Enemy Spawn Settings")]
     public float[] enemyProbabilities;
 
@@ -31,12 +36,20 @@ public class WaveManager : MonoBehaviour
     IEnumerator SpawnWave()
     {
         AudioManager.Instance.PlaySFX(5);
+
         waveNumber++;
         enemiesPerWave = Mathf.FloorToInt(enemiesPerWave * 1.2f);
         remainingEnemies = enemiesPerWave;
 
-        float healthMultiplier = Mathf.Pow(difficultyIncrease, waveNumber);
-        float damageMultiplier = Mathf.Pow(difficultyIncrease, waveNumber);
+        // 🔹 Escalado NUEVO (lineal + bonus cada 10 rondas)
+        float baseDamage = 1f + (waveNumber * damageIncreasePerWave);
+        float baseHealth = 1f + (waveNumber * healthIncreasePerWave);
+
+        int tens = waveNumber / 10;
+        float bonusMultiplier = Mathf.Pow(tenWaveMultiplier, tens);
+
+        float damageMultiplier = baseDamage * bonusMultiplier;
+        float healthMultiplier = baseHealth * bonusMultiplier;
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
@@ -63,8 +76,7 @@ public class WaveManager : MonoBehaviour
 
     void SpawnEnemy(float healthMultiplier, float damageMultiplier)
     {
-        Transform spawnPoint =
-            spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
         GameObject selectedEnemyPrefab = SelectEnemyPrefab();
 
@@ -74,7 +86,6 @@ public class WaveManager : MonoBehaviour
             Quaternion.identity
         );
 
-        
         newEnemy.transform.localScale = Vector3.one;
 
         IEnemyStats enemyScript = newEnemy.GetComponent<IEnemyStats>();
@@ -82,7 +93,6 @@ public class WaveManager : MonoBehaviour
         {
             enemyScript.SetStats(healthMultiplier, damageMultiplier);
         }
-
     }
 
     GameObject SelectEnemyPrefab()

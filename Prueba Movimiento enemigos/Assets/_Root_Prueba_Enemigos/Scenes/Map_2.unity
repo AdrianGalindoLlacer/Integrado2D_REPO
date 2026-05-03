@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 85908010}
   - component: {fileID: 85908011}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251070921}
   - component: {fileID: 251070922}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 465148356}
     m_Modifications:
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1140,15 +1140,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1407,7 +1407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443788217}
   - component: {fileID: 443788218}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,6 +1529,9 @@ MonoBehaviour:
   player: {fileID: 1450245195}
   upgradeClicked: 1
   upgradesPanel: {fileID: 1238063250}
+  damageIncreasePerWave: 0.05
+  healthIncreasePerWave: 0.08
+  tenWaveMultiplier: 1.1
   enemyProbabilities:
   - 10
   - 50
@@ -1547,7 +1550,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 367878598}
+  - {fileID: 495057914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &469026989
@@ -1560,7 +1565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469026990}
   - component: {fileID: 469026991}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494116526}
   - component: {fileID: 494116527}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella2_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1746,8 @@ GameObject:
   - component: {fileID: 494558028}
   - component: {fileID: 494558030}
   - component: {fileID: 494558029}
-  m_Layer: 0
+  - component: {fileID: 494558031}
+  m_Layer: 11
   m_Name: Mesa_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,13 +1873,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &494558031
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494558027}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.453, y: 0.37500003, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &495057913
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 465148356}
     m_Modifications:
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1893,15 +1915,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1269416210203491240, guid: b10581bb41d5a3149b1426769c94d3b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1939,7 +1961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 498834478}
   - component: {fileID: 498834479}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TablonAnuncios_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,135 +2041,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &505667333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 505667335}
-  - component: {fileID: 505667334}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &505667334
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505667333}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: f0fb3614f6633f3488969cc60e377686, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.3
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &505667335
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505667333}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.45363, y: -3.4488, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533691019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,7 +2168,8 @@ GameObject:
   - component: {fileID: 559229853}
   - component: {fileID: 559229855}
   - component: {fileID: 559229854}
-  m_Layer: 0
+  - component: {fileID: 559229856}
+  m_Layer: 11
   m_Name: Mesa_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2401,6 +2295,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &559229856
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559229852}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.453, y: 0.37500003, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &573384552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,7 +2320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573384553}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Objetos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2383,8 @@ GameObject:
   - component: {fileID: 579997881}
   - component: {fileID: 579997883}
   - component: {fileID: 579997882}
-  m_Layer: 0
+  - component: {fileID: 579997884}
+  m_Layer: 11
   m_Name: Mesa_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2599,6 +2510,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &579997884
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579997880}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.453, y: 0.37500003, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &655368102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655368103}
   - component: {fileID: 655368104}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12772,7 +12699,8 @@ GameObject:
   m_Component:
   - component: {fileID: 701681850}
   - component: {fileID: 701681851}
-  m_Layer: 0
+  - component: {fileID: 701681852}
+  m_Layer: 11
   m_Name: Silla_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12852,6 +12780,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &701681852
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701681849}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.29700002, y: 0.328, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &729018393
 GameObject:
   m_ObjectHideFlags: 0
@@ -12950,6 +12894,7 @@ RectTransform:
   - {fileID: 378747108}
   - {fileID: 1238063251}
   - {fileID: 994602442}
+  - {fileID: 786526396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12967,7 +12912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731904999}
   - component: {fileID: 731905000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lampara_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13197,6 +13142,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeButton
   title: {fileID: 1882457062}
   description: {fileID: 1630157963}
+--- !u!1 &786526395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2809740019004996557, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+  m_PrefabInstance: {fileID: 4654723550566724179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &786526396 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+  m_PrefabInstance: {fileID: 4654723550566724179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &888705323
 GameObject:
   m_ObjectHideFlags: 0
@@ -13207,7 +13162,8 @@ GameObject:
   m_Component:
   - component: {fileID: 888705324}
   - component: {fileID: 888705325}
-  m_Layer: 0
+  - component: {fileID: 888705326}
+  m_Layer: 11
   m_Name: Silla_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13287,6 +13243,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &888705326
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888705323}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.29700002, y: 0.328, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &902741927
 GameObject:
   m_ObjectHideFlags: 0
@@ -13297,7 +13269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902741928}
   - component: {fileID: 902741929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lampara_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13388,7 +13360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985223051}
   - component: {fileID: 985223052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella2_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13478,7 +13450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 987539893}
   - component: {fileID: 987539894}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TablonAnuncios_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13692,7 +13664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057960951}
   - component: {fileID: 1057960952}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20986,7 +20958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168481699}
   - component: {fileID: 1168481700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21267,7 +21239,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -21435,7 +21407,8 @@ GameObject:
   - component: {fileID: 1459735640}
   - component: {fileID: 1459735642}
   - component: {fileID: 1459735641}
-  m_Layer: 0
+  - component: {fileID: 1459735643}
+  m_Layer: 11
   m_Name: Mesa_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21561,6 +21534,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &1459735643
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459735639}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.453, y: 0.37500003, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1464922550
 GameObject:
   m_ObjectHideFlags: 0
@@ -21572,7 +21561,8 @@ GameObject:
   - component: {fileID: 1464922551}
   - component: {fileID: 1464922553}
   - component: {fileID: 1464922552}
-  m_Layer: 0
+  - component: {fileID: 1464922554}
+  m_Layer: 11
   m_Name: Piano_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21698,6 +21688,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &1464922554
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464922550}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.437, y: 0.40600002, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1478734638
 GameObject:
   m_ObjectHideFlags: 0
@@ -21708,7 +21714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478734639}
   - component: {fileID: 1478734640}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21795,7 +21801,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1498639714}
   - component: {fileID: 1498639715}
-  m_Layer: 0
+  - component: {fileID: 1498639716}
+  m_Layer: 11
   m_Name: Silla_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21875,6 +21882,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &1498639716
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498639713}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.29700002, y: 0.328, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1505774617
 GameObject:
   m_ObjectHideFlags: 0
@@ -21927,8 +21950,8 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
+    m_Bits: 3072
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
@@ -21965,7 +21988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1531417751}
   - component: {fileID: 1531417752}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TablonAnuncios_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22056,7 +22079,8 @@ GameObject:
   - component: {fileID: 1593841121}
   - component: {fileID: 1593841123}
   - component: {fileID: 1593841122}
-  m_Layer: 0
+  - component: {fileID: 1593841124}
+  m_Layer: 11
   m_Name: Mesa_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22182,6 +22206,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &1593841124
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593841120}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.453, y: 0.37500003, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1605809745
 GameObject:
   m_ObjectHideFlags: 0
@@ -22502,8 +22542,8 @@ MonoBehaviour:
   sfxlist:
   - {fileID: 8300000, guid: c179695cb1a0cf440bd579dfbf81ab1d, type: 3}
   - {fileID: 8300000, guid: bc637334e342285489e1abf2d226ae59, type: 3}
-  - {fileID: 8300000, guid: a1f0969a28817a04886b04cf98b80830, type: 3}
   - {fileID: 8300000, guid: 463aa126d0d21014da898614ca5f1b04, type: 3}
+  - {fileID: 8300000, guid: eab9baab4dcda3e478ee0f1a4f783af9, type: 3}
   - {fileID: 8300000, guid: 5559d09305c13ac4998b9315287102ed, type: 3}
   - {fileID: 8300000, guid: c9f1543a3475e1448875458816c6faca, type: 3}
 --- !u!4 &1639271804
@@ -22551,15 +22591,15 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Resource: {fileID: 8300000, guid: f0fb3614f6633f3488969cc60e377686, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.191
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -22663,7 +22703,8 @@ GameObject:
   - component: {fileID: 1705251296}
   - component: {fileID: 1705251298}
   - component: {fileID: 1705251297}
-  m_Layer: 0
+  - component: {fileID: 1705251299}
+  m_Layer: 11
   m_Name: Mesa_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22789,6 +22830,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &1705251299
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705251295}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.453, y: 0.37500003, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1777258173
 GameObject:
   m_ObjectHideFlags: 0
@@ -22799,7 +22856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1777258174}
   - component: {fileID: 1777258175}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lampara_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23159,7 +23216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1792867809}
   - component: {fileID: 1792867810}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23249,7 +23306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1799422279}
   - component: {fileID: 1799422280}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23430,6 +23487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839653028}
   - component: {fileID: 1839653029}
+  - component: {fileID: 1839653030}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -23470,6 +23528,19 @@ MonoBehaviour:
   normalCursor: {fileID: 2800000, guid: 75b61c7ceeea5214081a994174703be6, type: 3}
   clickCursor: {fileID: 2800000, guid: f28f004469e086d40a24f340d483f1e6, type: 3}
   hotSpot: {x: 0, y: 0}
+--- !u!114 &1839653030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839653027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18505237cc055f4496d7b5ed961162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
+  pauseMenuUI: {fileID: 786526395}
 --- !u!1 &1844815245
 GameObject:
   m_ObjectHideFlags: 0
@@ -23480,7 +23551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1844815246}
   - component: {fileID: 1844815247}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23941,7 +24012,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1952547829}
   - component: {fileID: 1952547830}
-  m_Layer: 0
+  - component: {fileID: 1952547831}
+  m_Layer: 11
   m_Name: Silla_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24021,6 +24093,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &1952547831
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952547828}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.29700002, y: 0.328, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1959941400
 GameObject:
   m_ObjectHideFlags: 0
@@ -24031,7 +24119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959941401}
   - component: {fileID: 1959941402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24121,7 +24209,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2036286310}
   - component: {fileID: 2036286311}
-  m_Layer: 0
+  - component: {fileID: 2036286312}
+  m_Layer: 11
   m_Name: Silla_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24201,6 +24290,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!208 &2036286312
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036286309}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.29700002, y: 0.328, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2048037412
 GameObject:
   m_ObjectHideFlags: 0
@@ -24301,7 +24406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2096057257}
   - component: {fileID: 2096057258}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Botella2_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24542,6 +24647,103 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1305238192}
   m_SourcePrefab: {fileID: 100100000, guid: f2aadb1c6cbbd6e4bb444699b213ecdb, type: 3}
+--- !u!1001 &4654723550566724179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 729018397}
+    m_Modifications:
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788480992714257055, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809740019004996557, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
+      propertyPath: m_Name
+      value: Pause
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1660624e92611cf46850e3f94a5ace16, type: 3}
 --- !u!1001 &5120403882924420739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24616,9 +24818,6 @@ SceneRoots:
   - {fileID: 465148356}
   - {fileID: 1505774620}
   - {fileID: 2135043805}
-  - {fileID: 367878597}
-  - {fileID: 495057913}
-  - {fileID: 505667335}
   - {fileID: 573384553}
   - {fileID: 1851863504}
   - {fileID: 396078049}

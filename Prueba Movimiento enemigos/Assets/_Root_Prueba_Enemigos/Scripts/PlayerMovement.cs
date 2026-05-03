@@ -25,10 +25,14 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     private Animator anim;
 
+    // 👉 Referencia al sistema de vida
+    PlayerHealth playerHealth;
+
     void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -46,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
             weapon.Fire();
         }
 
-        
         bool isMoving = moveInput.magnitude > 0.1f;
         anim.SetBool("Run", isMoving);
     }
@@ -72,17 +75,20 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        
         anim.SetBool("Dash", true);
-
         AudioManager.Instance.PlaySFX(4);
+
+        // 👉 Invencibilidad durante el dash
+        if (playerHealth != null)
+        {
+            playerHealth.ActivateInvincibility(dashDuration, false); // ❌ sin blink
+        }
+
         playerRb.linearVelocity = moveDirection * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
-
-        
         anim.SetBool("Dash", false);
 
         yield return new WaitForSeconds(dashCooldown);
@@ -104,9 +110,11 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
+
     void OnDisable()
     {
         moveInput = Vector2.zero;
     }
+
     #endregion
 }
